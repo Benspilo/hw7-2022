@@ -41,19 +41,28 @@ document.querySelector("#mute").addEventListener("click", function(){
 	if(video.muted == false){
 		console.log("muted");
 		video.muted = true;
-		document.querySelector("#mute").innerHTML = "mute"
+		document.querySelector("#mute").innerHTML = "Unmute"
 	}
 	else{
 		console.log("unmuted");
 		video.muted = false;
-		document.querySelector("#mute").innerHTML = "unmute"
+		document.querySelector("#mute").innerHTML = "Mute"
 
 	}
 })
 
 document.querySelector("#slider").addEventListener("click", function(){
 	console.log("the current volume is " + video.volume);
-	video.volume = this.volume/100;
+	video.volume = this.value/100;
+	document.querySelector("#volume").innerHTML = video.volume*100 +"%";
+})
 
-	innerHtml()
+document.querySelector("#vintage").addEventListener("click", function(){
+	console.log("old school")
+	video.classList.add('oldSchool')
+})
+
+document.querySelector("#orig").addEventListener("click", function(){
+	console.log("modern")
+	video.classList.remove('oldSchool')
 })
