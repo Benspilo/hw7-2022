@@ -5,7 +5,6 @@ window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	video.autoplay = false;
 	video.loop = false;
-	// video.defaultPlaybackRate(4)
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -52,7 +51,7 @@ document.querySelector("#mute").addEventListener("click", function(){
 })
 
 document.querySelector("#slider").addEventListener("click", function(){
-	console.log("the current volume is " + video.volume);
+	console.log("the current volume is " + video.volume*100+"%");
 	video.volume = this.value/100;
 	document.querySelector("#volume").innerHTML = video.volume*100 +"%";
 })
